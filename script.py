@@ -94,58 +94,28 @@ plt.savefig('dolar.png', dpi=300)
 
 #ENVIAR EMAIL
 
-#outlook = win32.Dispatch('outlook.application')
-
-#email = outlook.CreateItem(0)
-
-#email.To = "luisyounk@gmail.com"
-#email.Subject = "Relatório Diário"
-#email.Body = f'''Prezado futuro chefe, segue o relatório diário:
-
-#Bolsa:
-
-#No anos o Ibovespa está tendo uma rentabilidade de {retorno_anual_ibov}%,
-#enquanto no mês a rentabilidade é de {retorno_mensal_ibov}%.
-
-#No último dia útil, o fechamento do Ibovespa foi de {retorno_diario_ibov}%.
-
-#Dólar:
-
-#No ano o Dólar está tendo uma rentabilidade de {retorno_anual_dolar}%,
-#enquanto no mês a rentabilidade é de {retorno_mensal_dolar}%.
-
-#No último dia útil, o fechamento do Dólar foi de {retorno_diario_dolar}%.
-
-#Abs,
-
-#Luis Alexandre Dias dos Santos, seu novo estágiario.
-
-#'''
-
-#anexo_ibovespa = r'C:\Users\luisy\OneDrive\Área de Trabalho\python-ações\A--es-e-Python\ibovespa.png'
-#anexo_dolar = r'C:\Users\luisy\OneDrive\Área de Trabalho\python-ações\A--es-e-Python\dolar.png'
-
-
-#email.Attachments.Add(anexo_ibovespa)
-#email.Attachments.Add(anexo_dolar)
-
-#email.Send()
-
-
-
 # Dados do remetente
 email_user = 'luisyounk@gmail.com'
-email_password = 'sua-senha'
-email_destinatario = 'luisyounk@hotmail.com'
+email_password = 'suasenha'
+destinatarios = ['luisyounk@hotmail.com', 'brenno@varos.com.br']
+email_destinatario = ', '.join(destinatarios)
 
 # Configurações do e-mail
 msg = MIMEMultipart()
 msg['From'] = email_user
 msg['To'] = email_destinatario
-msg['Subject'] = "Relatório Diário "
+msg['Subject'] = "Explicação de Erro e Relatório"
 
 # Corpo da mensagem
-body = f'''Prezado futuro chefe, segue o relatório diário:
+body = f'''Prezado Brenno, tive alguns problemas ao enviar o email.
+
+Meu outlook não estava abrindo com o comando do python, eu recebia erro dizendo que a sintaxe estava errada.
+Porém após algumas pesquisa encontrei outro método de envio e deu certo.
+
+Essa mensagem está sendo enviada pelo Python mas utilizei o smtplib.
+
+
+Prezado futuro chefe, segue o relatório diário:
 
 Bolsa:
 
@@ -164,6 +134,7 @@ No último dia útil, o fechamento do Dólar foi de {retorno_diario_dolar}%.
 Abs,
 
 Luis Alexandre Dias dos Santos, seu novo estágiario. 
+ 
 
 '''
 msg.attach(MIMEText(body,'plain'))
