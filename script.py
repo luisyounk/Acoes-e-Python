@@ -107,14 +107,7 @@ msg['To'] = email_destinatario
 msg['Subject'] = "Explicação de Erro e Relatório"
 
 # Corpo da mensagem
-body = f'''Prezado Brenno, tive alguns problemas ao enviar o email.
-
-Meu outlook não estava abrindo com o comando do python, eu recebia erro dizendo que a sintaxe estava errada.
-Porém após algumas pesquisa encontrei outro método de envio e deu certo.
-
-Essa mensagem está sendo enviada pelo Python mas utilizei o smtplib.
-
-
+body = f'''
 Prezado futuro chefe, segue o relatório diário:
 
 Bolsa:
