@@ -3,7 +3,6 @@ import datetime
 import yfinance as yf
 from matplotlib import pyplot as plt
 import mplcyberpunk
-import win32com.client as win32
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
