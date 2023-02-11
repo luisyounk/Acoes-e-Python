@@ -103,7 +103,7 @@ email_destinatario = ', '.join(destinatarios)
 msg = MIMEMultipart()
 msg['From'] = email_user
 msg['To'] = email_destinatario
-msg['Subject'] = "Explicação de Erro e Relatório"
+msg['Subject'] = "Relatório"
 
 # Corpo da mensagem
 body = f'''
